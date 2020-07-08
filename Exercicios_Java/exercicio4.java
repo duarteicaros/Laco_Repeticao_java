@@ -18,49 +18,48 @@ package LacoRepeticao;
 import java.util.Scanner;
 
 public class exercicio4 {
-	
+
 	public static void main(String srgs[]) {
-        Scanner dados = new Scanner(System.in);
+		Scanner dados = new Scanner(System.in);
 
-        int idade,sexo,estado,qntd = 0,fnervo = 0,calmo = 0,hagressivo = 0,pnervoso = 0,pcalma = 0;
+		int idade, sexo, estado, qntd = 0, fnervo = 0, calmo = 0, hagressivo = 0, pnervoso = 0, pcalma = 0;
 
-        while(qntd <= 2) {
-            System.out.printf("Digite sua idade: ");
-            idade = dados.nextInt();
-            System.out.printf("Digite seu sexo se Feminino = 1 e Masculino = 2: ");
-            sexo = dados.nextInt();
-            System.out.printf("\n1 se você for calma \n2 se for nervosa \n3 se for agressiva \n\nDigite seu humor: ");
-            estado = dados.nextInt();
-            qntd++;
+		while (qntd <= 150) {
+			System.out.printf("Digite sua idade: ");
+			idade = dados.nextInt();
+			System.out.printf("Digite seu sexo se Feminino = 1 e Masculino = 2: ");
+			sexo = dados.nextInt();
+			System.out.printf("\n1 se você for calma \n2 se for nervosa \n3 se for agressiva \n\nDigite seu humor: ");
+			estado = dados.nextInt();
 
-            if(estado == 1)
-            {
+			if (estado == 1) {
+				calmo++;
+			}
+			if (sexo == 1 && estado == 2) {
 
-                calmo++;
-            }
-            else if(sexo == 1 && estado == 2) {
+				fnervo++;
+			}
+			if (sexo == 2 && estado == 3) {
 
-                fnervo++;
-            }
-            else if (sexo == 2 && estado == 3) {
+				hagressivo++;
+			}
+			if (idade > 40 && estado == 2) {
 
-                hagressivo++;
-            }
-            else if(idade > 40 && estado == 2) {
+				pnervoso++;
+			}
+			if (idade < 18 && estado == 1) {
 
-                pnervoso++;
-            }
-            else if(idade < 18 && estado == 1) {
+				pcalma++;
+			}
+			qntd++;
 
-                pcalma++;
-            }
+		}
 
-    }
-        System.out.println("\nO número de pessoas calmas é:" + calmo);
-        System.out.println("O número de mulheres nervosas é:" + fnervo);
-        System.out.println("O número de homens agressivos é:" + hagressivo);
-        System.out.println("O número de pessoas nervosas com mais de 40 anos:" + pnervoso);
-        System.out.println("O número de pessoas calmas com menos de 18 anos:" + pcalma);
-}
+		System.out.println("\nO número de pessoas calmas é:" + calmo);
+		System.out.println("O número de mulheres nervosas é:" + fnervo);
+		System.out.println("O número de homens agressivos é:" + hagressivo);
+		System.out.println("O número de pessoas nervosas com mais de 40 anos:" + pnervoso);
+		System.out.println("O número de pessoas calmas com menos de 18 anos:" + pcalma);
+	}
 
 }
